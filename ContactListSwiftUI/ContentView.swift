@@ -8,9 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var persons = Person.getPerson()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        NavigationView {
+            TabView {
+                HomeScreen(persons: persons)
+                    .tabItem {
+                        Image(systemName: "person.3")
+                        Text("Contacts")
+                    }
+                
+                NumbersList(persons: persons)
+                    .tabItem {
+                        Image(systemName: "phone")
+                        Text("Numbers")
+                    }
+            }
+            .navigationBarTitle("Contact List")
+        }
     }
 }
 

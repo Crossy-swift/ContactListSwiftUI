@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var persons = Person.getPerson()
+    private var persons = Person.getPersons()
     
     var body: some View {
         

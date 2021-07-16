@@ -23,12 +23,12 @@ struct DetailContact: View {
             }
             ContactRow(person: persons)
         }
-        .navigationBarTitle("\(persons.fullname)")
+        .navigationBarTitle(persons.fullname)
     }
 }
 
 struct DetailContact_Previews: PreviewProvider {
     static var previews: some View {
-        DetailContact(persons: Person.getPerson()[0])
+        DetailContact(persons: Person.getPersons().first!)
     }
 }

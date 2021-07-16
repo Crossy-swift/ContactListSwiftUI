@@ -13,8 +13,10 @@ struct ContactRow: View {
     
     var body: some View {
         
-        ContactInfo(person: person.phoneNumber, image: "phone")
-        ContactInfo(person: person.email, image: "mail")
+        VStack(alignment: .leading) {
+            ContactInfo(person: person.phoneNumber, image: "phone")
+            ContactInfo(person: person.email, image: "mail")
+        }
     }
 }
 
@@ -28,14 +30,14 @@ struct ContactInfo: View {
         HStack {
             Image(systemName: image)
                 .foregroundColor(.blue)
-            Text("\(person)")
+            Text(person)
         }
-        .font(.title2)
+        .font(.title3)
     }
 }
 
 struct ContactRow_Previews: PreviewProvider {
     static var previews: some View {
-        ContactRow(person: Person.getPerson()[0])
+        ContactRow(person: Person.getPersons().first!)
     }
 }

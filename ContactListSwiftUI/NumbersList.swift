@@ -19,7 +19,7 @@ struct NumbersList: View {
                     Section(header: Text(person.fullname)) {
                         ContactRow(person: person)
                     }
-                    .textCase(nil)
+                    .textCase(.none)
                 }
             }
         }
@@ -27,6 +27,6 @@ struct NumbersList: View {
 }
 struct NumbersList_Previews: PreviewProvider {
     static var previews: some View {
-        NumbersList(persons: Person.getPerson())
+        NumbersList(persons: Person.getPersons())
     }
 }

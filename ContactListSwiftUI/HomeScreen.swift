@@ -15,7 +15,7 @@ struct HomeScreen: View {
         
         List(persons, id: \.id) { person in
             NavigationLink(
-                "\(person.fullname)",
+                person.fullname,
                 destination: DetailContact(persons: person)
             )
         }
@@ -24,6 +24,6 @@ struct HomeScreen: View {
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen(persons: Person.getPerson())
+        HomeScreen(persons: Person.getPersons())
     }
 }
